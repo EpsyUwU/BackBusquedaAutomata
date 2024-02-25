@@ -42,7 +42,7 @@ def search(data: SearchData):
     campo_minuscula = df[data.campo].str.lower()
 
     # Filtrar los registros que comienzan exactamente con el valor en el campo especificado
-    registros = df[campo_minuscula.str.startswith(valor_minuscula, na=False)]
+    registros = df[campo_minuscula.str.contains(valor_minuscula, na=False)]
 
     # Si no se encontraron registros, regresar un mensaje indicando esto
     if registros.empty:
